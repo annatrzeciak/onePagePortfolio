@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("html").on("submit", "#contact_form", function(e) {
+                e.preventDefault();
+                $("#send_form_status").html('').hide();
+                var data = $("#contact_form").serialize();
+                $.post("/send_form.php", data, function(res) {
+                    $("#send_form_status").html(res.msg).show();
+                    if (res.status == 1) {
+                        $("#contact_form")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body onload='loadMainPanel()'>
+    <div id="panels">
+
+        <div id="menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <div class="items">
+                <a class="menuItem" href='#main'>Strona główna</a>
+                <a class="menuItem" href='#about'>O mnie</a>
+                <a class="menuItem" href='#skills'>Umiejętności</a>
+                <a class="menuItem" href='#projects'>Projekty</a>
+                <a class="menuItem" href='#contact'>Kontakt</a>
+            </div>
+        </div>
+        <div class="panel" id="skills">
+            <div class="info">
+
+                <h4>Stosuję:</h4>
+                <div>
+                    <i class="devicon-html5-plain" alt="HTML5"></i>
+                    <i class="devicon-css3-plain"></i>
+                    <i class="devicon-javascript-plain"></i>
+                    <i class="devicon-jquery-plain-wordmark"></i>
+                    <i class="devicon-angularjs-plain"></i>
+                </div>
+                <h4>Narzędzia:</h4>
+                <div>
+                    <i class="devicon-git-plain-wordmark"></i>
+                    <i class="devicon-photoshop-plain"></i>
+                </div>
+                <h4>Podstawy:</h4>
+                <div>
+                    <i class="devicon-nodejs-plain-wordmark"></i>
+                    <i class="devicon-bootstrap-plain-wordmark"></i>
+                    <i class="devicon-wordpress-plain"></i>
+                    <i class="devicon-java-plain"></i>
+                    <i class="devicon-php-plain"></i>
+
+
+                </div>
+            </div>
+            <h2>Umiejętności</h2>
+
+        </div>
+        <div class="panel" id="projects">
+            <div class="info">
+                <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+                   <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+                   <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+                   <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+                   <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+                   <div class="project">
+                    <a><img src="img/7084770503_5493c69768_b.jpg"></a>
+                    <div class="description">
+                        <h5>Tytuł</h5>
+                        Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu Opis projektu </div>
+                    <div class="projectLinks">
+                        <a href="#" target="_blank"><img src="img/github.png"></a>
+                        <a href="#" target="_blank"><img class="neticon" src="img/world-wide-web.png"></a>
+                    </div>
+
+                </div>
+              
+
+               
+
+            </div>
+            <h2>Projekty</h2>
+
+        </div>
+        <div class="panel" id="main">
+            <div class="info">
+                <h1>Anna Kowalska</h1>
+                <h3>Junior Front-end developer</h3>
+
+            </div>
+            <h2>Strona główna</h2>
+        </div>
+        <div class="panel" id="about">
+            <div class="info">
+                <img src="img/laptop-2561018_1920.jpg"><br> Nazywam się Anna Kowalska i jestem Front-end Developerem. <br> Jestem otwarta na propozycje współpracy. <br> Zapraszam do zapoznania się z moim <a id='linkPortfolio' href="#projects">portfolio</a> i <a id='linkContact' href="#contact">kontaktu.</a>
+            </div>
+            <h2>O mnie</h2>
+
+        </div>
+        <div class="panel" id="contact">
+            <div class="info">
+                <div id="links">
+                    <h3> Anna Kowalska:</h3>
+                    <a href="mailto:#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="devicon-github-plain"></i></a>
+                </div>
+                <div id="contactForm">
+
+                    <div id="send_form_status"></div>
+                    <form method="post" action="/send_form.php" id="contact_form">
+                        <div><label for="name">Imię </label></div>
+                        <div><input type="text" name="name" id="name" class="formField" /></div>
+                        <div><label for="email">Adres email</label></div>
+                        <div><input type="text" name="email" id="email" class="formField" /></div>
+                        <div><label for="message">Treść wiadomości</label></div>
+                        <div><textarea name="message" id="message" class="formField"></textarea></div>
+                        <div><button id="sendBtn">Wyślij</button></div>
+                    </form>
+                </div>
+            </div>
+            <h2>Kontakt</h2>
+
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+<link rel="stylesheet" href="style.css">
