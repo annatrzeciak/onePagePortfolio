@@ -1,7 +1,21 @@
 const panels = document.querySelectorAll(".panel");
 const linkPortfolio = document.querySelector('#linkPortfolio');
 const linkContact = document.querySelector('#linkContact');
-const menuIcon=document.querySelector('#menu');
+const menuIcon = document.querySelector('#menu');
+const preloader = document.querySelector('.preloader');
+
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        preloader.classList.add('preloader-hiding');
+        setTimeout(function () {
+            preloader.classList.add('preloader-hidden');
+            preloader.classList.remove('preloader-hiding');
+            loadMainPanel();
+
+        }, 500)
+    }, 500);
+})
+
 function clickPanel() {
 
     if (document.querySelectorAll('.open').length != 0 && !this.classList.contains('open')) {
@@ -39,16 +53,17 @@ function closePanel(panel) {
 function loadMainPanel() {
     setTimeout(function () {
         openPanel(document.querySelector('#main'))
-    }, 1000);
+    }, 500);
 }
 
 linkPortfolio.addEventListener('click', function () {
-    openPanel(document.querySelector('.projects'))
+    openPanel(document.querySelector('#projects'))
 });
 linkContact.addEventListener('click', function () {
-    openPanel(document.querySelector('.contact'))
+    openPanel(document.querySelector('#contact'))
 });
-function showMenu(){
+
+function showMenu() {
     document.querySelector('.items').classList.toggle('showMenu');
 }
 
