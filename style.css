@@ -28,8 +28,7 @@ h1 {
 
 h2 {
     position: absolute;
-    width: 18vw;
-    padding: 0 1vw;
+      padding: 0 1vw;
     bottom: 1vh;
     transform: rotate(-90deg);
     transform-origin: 0% 0%;
@@ -492,6 +491,9 @@ textarea.formField {
     }
     #projects {
         height: auto;
+        
+    }
+    #projects .info{
         overflow-y: auto;
     }
     .project {
