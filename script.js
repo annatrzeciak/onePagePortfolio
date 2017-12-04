@@ -3,6 +3,7 @@ const linkPortfolio = document.querySelector('#linkPortfolio');
 const linkContact = document.querySelector('#linkContact');
 const menuIcon = document.querySelector('#menu');
 const preloader = document.querySelector('.preloader');
+const infoChildrens = document.querySelectorAll('.info>*');
 
 window.addEventListener('load', function () {
     setTimeout(function () {
@@ -16,20 +17,21 @@ window.addEventListener('load', function () {
     }, 500);
 })
 
-function clickPanel() {
+function clickPanel(panel) {
 
-    if (document.querySelectorAll('.open').length != 0 && !this.classList.contains('open')) {
+    if (document.querySelectorAll('.open').length != 0 && !panel.classList.contains('open')) {
         closePanel(document.querySelector('.open'));
-        openPanel(this);
+        openPanel(panel);
 
-    } else if (!this.classList.value.includes('open')) {
-        openPanel(this);
+    } else if (!panel.classList.value.includes('open')) {
+        openPanel(panel);
     } else {
-        closePanel(this);
+        closePanel(panel);
     }
 }
 
 function openPanel(panel) {
+
     panel.classList.toggle("open");
 
     setTimeout(function () {
@@ -47,6 +49,7 @@ function closePanel(panel) {
         panel.querySelector("h2").classList.toggle("horizontal")
     }, 200);
 
+
     setTimeout(panel.classList.toggle("open"), 700);
 }
 
@@ -57,15 +60,24 @@ function loadMainPanel() {
 }
 
 linkPortfolio.addEventListener('click', function () {
-    openPanel(document.querySelector('#projects'))
+    clickPanel(document.querySelector('#projects'))
 });
 linkContact.addEventListener('click', function () {
-    openPanel(document.querySelector('#contact'))
+    clickPanel(document.querySelector('#contact'))
 });
 
 function showMenu() {
     document.querySelector('.items').classList.toggle('showMenu');
+
 }
 
+
 menuIcon.addEventListener('click', showMenu);
-panels.forEach(panel => panel.addEventListener('click', clickPanel));
+
+$('.panel').click(function (e) {
+      if (e.target == this) {
+        clickPanel(e.target);
+    } else if (e.target.localName == 'h2') {
+        clickPanel(e.target.parentElement);
+    }
+})

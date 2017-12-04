@@ -14,9 +14,9 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Lato', sans-serif;
     color: white;
-    font-size: 5.5vh;
+    font-size: 5vh;
     text-shadow: 0.5vh 0.5vh 0.5vh black;
     margin-bottom: 2vh;
 }
@@ -26,36 +26,48 @@ h1 {
     font-size: 11vh;
 }
 
-h2 {
+h2 {    margin-bottom: 0;
     position: absolute;
-      padding: 0 1vw;
+    
     bottom: 1vh;
     transform: rotate(-90deg);
     transform-origin: 0% 0%;
     transition: 0.5s;
+    padding: 0;
 }
 
 h3 {
     text-align: center;
-    font-size: 6vh;
+    font-size: 5vh;
 }
 
 h4 {
     margin-top: 3vh;
+    text-shadow: none;
 }
 
 h5 {
-    font-family: 'Roboto', sans-serif;
     font-size: 3vh;
     text-align: center;
+    text-shadow: none;
 }
 
 
 /*Menu*/
 
-.fa-bars {
-    opacity: 0;
-    position: absolute;
+.menuIcon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
 #menu {
@@ -72,8 +84,8 @@ h5 {
 .preloader {
     width: 100%;
     height: 100%;
-    background: #007991;
-    background: linear-gradient(to right, #78ffd6, #007991);
+    background: #c7c7c7;
+    background: linear-gradient(to left, #c7c7c7, #7b7b7b);
     position: fixed;
     z-index: 100;
     display: flex;
@@ -85,7 +97,7 @@ h5 {
     height: 3vh;
     width: 3vh;
     margin: 0 2vh;
-    border: 4px solid #d3ffee;
+    border: 4px solid #e7e7e7;
     border-radius: 50%;
     animation: show-hide 1s ease infinite;
     transition: opacity .5s ease;
@@ -131,7 +143,7 @@ h5 {
 }
 
 body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Lato', sans-serif;
     width: 100vw;
     height: 100vh;
 }
@@ -158,29 +170,35 @@ body {
     padding: 1.5vh 1.5vw;
 }
 
+.panel h2 {
+    cursor: pointer;
+    width: 35%;
+}
+
 #skills {
     background: url(img/img1.jpg) center no-repeat;
-    background-size: auto 100vh;
+    
+    background-size: cover;
 }
 
 #projects {
-    background: #007991;
-    background: linear-gradient(to right, #78ffd6, #007991);
+    background: #c7c7c7;
+    background: linear-gradient(to left, #c7c7c7, #7b7b7b);
 }
 
 #main {
     background: url(img/img6.jpg) center no-repeat;
-    background-size: auto 100vh;
+    background-size: cover;
 }
 
 #about {
-    background: #007991;
-    background: linear-gradient(to right, #78ffd6, #007991);
+    background: #c7c7c7;
+    background: linear-gradient(to left, #c7c7c7, #7b7b7b);
 }
 
 #contact {
     background: url(img/img7.jpg) center no-repeat;
-    background-size: auto 100vh;
+     background-size: cover;
 }
 
 .info {
@@ -245,6 +263,7 @@ a {
 }
 
 .project {
+   height: auto;
     min-height: 40%;
     width: 100%;
     flex-direction: row;
@@ -254,6 +273,7 @@ a {
     background: rgba(0, 0, 0, 0.4);
     padding: 1vw;
     box-sizing: border-box;
+    overflow-y: visible;
 }
 
 .project a {
@@ -269,16 +289,23 @@ a {
 }
 
 .description {
-    font-size: 1.2vw;
-    padding: 0 1vh;
-    width: 70%;
+    font-size: 1.3vw;
+    padding: 2vh;
+    padding-top: 0;
+    width: 80%;
     height: 100%;
     display: flex;
-    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     align-items: center;
     flex-direction: column;
     text-shadow: none;
+    box-sizing: border-box;
+    
+}
+.description div{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2vh;
 }
 
 .projectLinks {
@@ -303,7 +330,7 @@ a {
 
 #about .info {
     display: block;
-    font-size: 5vh;
+    font-size: 4vh;
     text-shadow: 0 0 0 black;
 }
 
@@ -331,6 +358,10 @@ a {
     align-items: center;
 }
 
+#contact h3 {
+    text-shadow: none;
+}
+
 #links {
     display: flex;
     flex-direction: column;
@@ -349,7 +380,6 @@ a {
     background: lightgrey;
     font-size: 3vh;
     padding: 2vh;
-    font-family: 'Roboto', sans-serif;
     text-shadow: 0 0 0 black;
     color: #424040;
     font-weight: normal;
@@ -376,7 +406,6 @@ textarea.formField {
     color: #424040;
     border: 0.3vh solid #ccc;
     line-height: 6vh;
-    font-family: 'Roboto', sans-serif;
     font-size: 3vh;
     padding: 1vh;
     border-radius: 0.5vh;
@@ -398,14 +427,13 @@ textarea.formField {
 }
 
 @media only screen and (orientation: portrait) {
-    .fa-bars {
-        opacity: 0.6;
+    .menuIcon {
+        opacity: 0.8;
         font-size: 5vh;
         cursor: pointer;
         margin: 2vh;
         right: 4vh;
         top: 2vh;
-        position: fixed;
     }
     #menu {
         opacity: 1;
@@ -416,7 +444,7 @@ textarea.formField {
     .items {
         position: absolute;
         width: 100%;
-        background: rgba(0, 0, 0, 0.6);
+        background: #7b7b7b;
         opacity: 0;
         margin: 2vh;
         left: -100%;
@@ -429,7 +457,7 @@ textarea.formField {
     }
     .menuItem {
         display: block;
-        font-size: 7vh;
+        font-size: 5vh;
         text-align: center;
     }
     #panels {
@@ -440,13 +468,17 @@ textarea.formField {
         height: auto;
         overflow: scroll;
         background: url(img/img1.jpg) center no-repeat;
-        background-size: auto 100vh;
+       background-size: cover;
         background-attachment: fixed;
     }
     .panel {
         background: transparent !important;
         height: 100vh;
         width: 100vw;
+    }
+    .panel h2{
+        width: 80%;
+        margin-top: 2vh;
     }
     #skills {
         order: 3;
@@ -486,14 +518,16 @@ textarea.formField {
     #about .info img {
         margin-top: 2vh;
     }
+    #about .info {
+        font-size: 4.5vh;
+    }
     #skills i {
         font-size: 7vh;
     }
     #projects {
         height: auto;
-        
     }
-    #projects .info{
+    #projects .info {
         overflow-y: auto;
     }
     .project {
@@ -508,6 +542,7 @@ textarea.formField {
     .description {
         width: 100%;
         font-size: 3vh;
+        padding: 3vh;
     }
     .description h5 {
         font-size: 5vh;
